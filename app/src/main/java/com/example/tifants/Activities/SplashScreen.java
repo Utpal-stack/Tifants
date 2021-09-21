@@ -1,10 +1,12 @@
-package com.example.tifants;
+package com.example.tifants.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import com.example.tifants.R;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -26,7 +28,7 @@ public class SplashScreen extends AppCompatActivity {
                     ex.printStackTrace();
                 }
                 finally {
-                    Intent intent = new Intent(SplashScreen.this, loginActivity.class);
+                    Intent intent = new Intent(SplashScreen.this, OnboardActivity.class);
                     startActivity(intent);
                     finish();
                 }

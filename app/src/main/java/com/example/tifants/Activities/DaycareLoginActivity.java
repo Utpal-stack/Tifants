@@ -1,23 +1,25 @@
-package com.example.tifants;
+package com.example.tifants.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class loginActivity extends AppCompatActivity {
+import com.example.tifants.Fragments.DaycareLoginFragment;
+import com.example.tifants.Fragments.ParentLoginFragment;
+import com.example.tifants.R;
+
+public class DaycareLoginActivity extends AppCompatActivity {
     Button daycareTab;
     Button parentTab;
     androidx.fragment.app.Fragment fragment=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_daycare_login);
         daycareTab=(Button)findViewById(R.id.DaycareTab);
         getSupportActionBar().hide();
         parentTab=(Button)findViewById(R.id.parentsTab);
@@ -27,7 +29,7 @@ public class loginActivity extends AppCompatActivity {
         daycareTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(loginActivity.this, "Daycare Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DaycareLoginActivity.this, "Daycare Clicked", Toast.LENGTH_SHORT).show();
                 try {
                     fragment = new DaycareLoginFragment();
                     getSupportFragmentManager().beginTransaction()
@@ -40,7 +42,7 @@ public class loginActivity extends AppCompatActivity {
         parentTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(loginActivity.this, "ParentTab Clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DaycareLoginActivity.this, "ParentTab Clicked", Toast.LENGTH_SHORT).show();
                 try {
                     fragment = new ParentLoginFragment();
                     getSupportFragmentManager().beginTransaction()
@@ -51,7 +53,6 @@ public class loginActivity extends AppCompatActivity {
             }
         });
     }
-
     public void loadFragment(Fragment fragment){
 
     }

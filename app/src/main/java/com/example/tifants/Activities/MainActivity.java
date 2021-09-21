@@ -1,4 +1,4 @@
-package com.example.tifants;
+package com.example.tifants.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.tifants.R;
 
 public class MainActivity extends AppCompatActivity {
     Button btn;
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, loginActivity.class));
+                startActivity(new Intent(MainActivity.this, DaycareLoginActivity.class));
             }
         });
     }
